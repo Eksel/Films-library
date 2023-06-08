@@ -107,6 +107,10 @@ header h1 {
   text-align: right;
   margin:0 1em;
 }
+.card a{
+  text-decoration: none;
+  color: black;
+}
 @media (max-width: 600px) {
   header h1{
     display: none;
