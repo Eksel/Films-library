@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const MakeUrl = (poster_path) => {
         return `https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`
     }
@@ -9,8 +10,9 @@ const Card = ({id,title,vote_average,poster_path,release_date}) => {
     return (
         
         <div className='card'>
-            <a href={summary(id)}>
+            <Link to={summary(id)}>
                 <div className='image'>
+                    
                     <img src={MakeUrl(poster_path)} alt="" />
                 </div>
                 <div className='content'>
@@ -19,7 +21,7 @@ const Card = ({id,title,vote_average,poster_path,release_date}) => {
                     <h2 className='date'>{release_date}</h2>
                 </div>
             
-            </a>
+            </Link>
         </div>
     );
 }

@@ -33,34 +33,40 @@ function App() {
       .then(data => {
         
         setCards(data.results)
+        
+
       })
   }
   useEffect(() => {
     fetchUserData()
   }, [])
+  const get = () =>{
+    console
+    return cards[0]
+  }
   function summary(a){
     return '/'+a
   }
   return (
-    <>
+    <div className='app'>
       <Router>
         <Routes>
           <Route path='/' element={<Main list={cards} />} />
-            
+          <Route path='/huj' element={<h1>siema</h1>}/>
           
-          {cards.length > 0 && (
-              <>
+          
+              
                 {cards.map(item => (
-                  <Route key={item.id} path={summary(item.id)} element={<Film values={item}/>}/ >
-                    
+                  <Route key={item.id} path={summary(item.id)} element={<Film values={item}/>}  />
+                  
+                  
                   
                 ))}
-              </>
-            )}
+              
         </Routes>
       </Router>
       
-    </>
+    </div>
   )
 }
 

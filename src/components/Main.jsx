@@ -22,14 +22,14 @@ const Main = () => {
         return response.json()
       })
       .then(data => {
-        
+        console.log(data.results)
         setCards(data.results)
       })
   }
   useEffect(() => {
     fetchUserData()
   }, [])
-
+    
     const [query, setQuery] = useState("");
     const inputElement = useRef();
     const focusInput = () => {

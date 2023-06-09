@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;0,700;1,700&family=Secular+One&display=swap');
 
-
+.app{
+  overflow: hidden;
+}
 .navbar{
   box-shadow: 2px 2px 20px black;
   display: flex;
   justify-content: left;
   align-items: center;
-  height: 6em;
+  height: 10vh;
   background-color: blueviolet;
   width: 100%;
 }
@@ -69,6 +71,9 @@ header h1 {
   letter-spacing: 3px;
 }
 .conteiner{
+  min-height: 90vh;
+  background: rgb(119,159,185);
+  background: linear-gradient(145deg, rgba(119,159,185,1) 16%, rgba(236,225,157,1) 50%, rgba(10,21,47,1) 100%);
   color: black;
   font-family: 'Secular One', sans-serif;
 }
@@ -80,24 +85,39 @@ header h1 {
   
 }
 .card-container .card{
+  background-color: rgb(52, 41, 41);
+  
   width: 220px;
-  height: fit-content;
+  height: 60vh;
   border-radius: 20px;
   margin: 1em;
   box-sizing: border-box;
   box-shadow: 2px 2px 10px black;
+  transition: 0.2s;
+}
+.card-container .card:hover{
+  border: 2px solid white;
+  scale: 1.1;
 }
 .card-container .card .image img{
+  width: 100%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 .card-container .card .content{
+  
+  color: white;
+  
+  height: calc(60vh - 330px);
   display: flex;
   flex-direction: column;
+  justify-content: space-around ;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 .card .content .title{
+  margin:0 0.5em;
+
   text-align: center;
 }
 .card .content .rate{
@@ -111,12 +131,84 @@ header h1 {
   text-decoration: none;
   color: black;
 }
+.film{
+  background-size: cover;
+}
+.film .page-header{
+  background-position: 50%;
+  
+  display: flex;
+  height: 50vh;
+  box-sizing: border-box;
+}
+.film .page-header .back-btn svg{
+  
+  color: white;
+  padding: 0.5em;
+  font-size: 2rem;
+  width: 2em;
+}
+.film .page-header .title{
+  text-shadow: 2px 2px 10px black;
+  font-family: 'Rubik',sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 5rem;
+  padding: 1em 0;
+}
+.film .content{
+  box-shadow: 0px 10px 2em black inset;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  height: 50vh;
+  color: white;
+  font-family: 'Secular One',sans-serif;
+  display: flex;
+  background-color: rgb(37, 32, 32);
+  padding: 2em 8em;
+}
+.film .content img{
+  border-radius: 10px;
+  border: 1px solid white;
+}
+.film .content .right{
+  display: flex;
+  flex-direction: column;
+  padding: 1em 3em;
+
+}
+.film .content .right .rate{
+  padding: 1em 0;
+}
+.film .content .right .overview{
+  padding: 1em 0;
+
+}
+
 @media (max-width: 600px) {
-  header h1{
+  .navbar h1{
     display: none;
   }
   .navbar .search{
     width: fit-content;
+  }
+}
+@media (max-width: 900px) {
+  .film .page-header{
+    flex-direction: column;
+    background-position: 50% 20%;
+  }
+  .film .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 2em;
+    height: fit-content;
+  }
+  .film .page-header .title{
+    text-align: center;
+    font-size: 2rem;
+    padding: 1em 3em;
+    
   }
 }
 
